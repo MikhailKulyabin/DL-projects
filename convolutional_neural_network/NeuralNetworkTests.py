@@ -834,12 +834,12 @@ class TestConvNet(unittest.TestCase):
 
         net.layers.append(Flatten.Flatten())
 
-        fcl_1 = FullyConnected.FullyConnected(fcl_1_input_size, np.int(fcl_1_input_size/2.))
+        fcl_1 = FullyConnected.FullyConnected(fcl_1_input_size, int(fcl_1_input_size/2.))
         net.append_trainable_layer(fcl_1)
 
         net.layers.append(ReLU.ReLU())
 
-        fcl_2 = FullyConnected.FullyConnected(np.int(fcl_1_input_size/2.), categories)
+        fcl_2 = FullyConnected.FullyConnected(int(fcl_1_input_size/2.), categories)
         net.append_trainable_layer(fcl_2)
 
         net.layers.append(SoftMax.SoftMax())
